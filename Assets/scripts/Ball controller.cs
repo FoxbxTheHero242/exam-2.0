@@ -10,6 +10,8 @@ public class Ballcontroller : MonoBehaviour
     private bool zCheck;
     private bool grounded;
     private Rigidbody player;
+
+    private int activeColl;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +40,24 @@ public class Ballcontroller : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.transform.tag=="gem")
+        {
+            Destroy(other.gameObject);
+        }
+        activeColl++;
+    }
+
     private void OnCollisionExit(Collision other)
     {
+        activeColl--;
+        if (activeColl==0)
+        {
+            grounded = false;
+                    player.useGravity = true;
+        }
         
-        grounded = false;
-        player.useGravity = true;
 
     }
 }
