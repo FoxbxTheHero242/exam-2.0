@@ -24,7 +24,7 @@ public class Ballcontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y<-5)
+        if (transform.GetComponent<Rigidbody>().useGravity==true)
         {
             SceneManager.LoadScene(1);
         }
