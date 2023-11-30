@@ -20,6 +20,6 @@ public class reset : MonoBehaviour
 
     public void Resetit()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

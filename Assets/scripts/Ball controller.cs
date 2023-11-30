@@ -12,6 +12,7 @@ public class Ballcontroller : MonoBehaviour
     private bool grounded;
     private Rigidbody player;
 
+    private int score;
     private int activeColl;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,7 @@ public class Ballcontroller : MonoBehaviour
     {
         if (transform.GetComponent<Rigidbody>().useGravity==true)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
